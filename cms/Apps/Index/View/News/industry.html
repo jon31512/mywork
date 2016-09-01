@@ -1,0 +1,59 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .menu-2-ul{list-style:none;position:relative;top: 120px;font-size: 16px;}
+        .menu-2-ul li{padding: 10px 0 10px 0;}
+        .menu-2-ul li a:visited {color:#fff;text-decoration:none;}
+        .menu-2-ul li a:link{color: #fff; text-decoration:none;}
+        .titleinfo{position: absolute;top: 18px;left: 320px;}
+        .title-cn{font-size: 18px;color: #b5b5b6;line-height: 28px;font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu }
+        .title-en{font-size: 16px;color: #b5b5b6;font-family: arial, helvetica, sans-serif;}
+        hr{position: absolute;top: 70px;left: 320px;width: 835px;border:1px #595757 solid ;}
+        .index{color: #595757;position: absolute;left: 980px;top: 50px;}
+        .newstitle{color: #fff;position: absolute;left: 320px;top: 90px;font-size: 14px;height:530px; width: 835px;}
+        .newstitle ul li{width: 840px;margin-bottom: 15px;margin-left: 15px;}
+        .newstitle ul li span {position: absolute;right: 0px;}
+        .newstitle ul li a {color: #fff; text-decoration:none;}
+        .newstitle ul li a :link{color: #fff; text-decoration:none;}
+        .newstitle ul li a :visited{color: #fff; text-decoration:none;}
+        .newstitle ul li a :hover{color: #fff; text-decoration:none;}
+        .newstitle ul li a :active{color: #fff; text-decoration:none;}
+        .pages{margin-top:30px;}
+    </style>
+</block>
+<block name="left-2-menu">
+<ul class="menu-2-ul">
+    <volist name="menu2list" id="vo">
+        <li id="menu2-li{$vo.id}"><a href="__ROOT__/{$vo.link}.html">{$vo.name}</a></li>
+    </volist>
+</ul>
+</block>
+<block name="right">
+    <span class="titleinfo"><span class="title-cn">行业动态</span><br><span class="title-en">INDUSTRY NEWS</span></span><span class="index"><img src="__PUBLIC__/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > 新闻中心 > 行业动态</span>
+    <hr/>
+    <div class="newstitle">
+        <ul>
+            <volist name="newslist" id="vo">
+                <li><a href="__URL__/dex/industry/{$vo.id}.html">{$vo.title}</a><span>{:time_string($vo[times],2)}</span></li>
+            </volist>
+        </ul>
+        <div class="pages">
+            <a href="#"><img src="__PUBLIC__/img/index/pre.png" style="border: 0;"></a> &nbsp; &nbsp;
+            <a href="#"><img src="__PUBLIC__/img/index/next.png" style="border: 0;"></a>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script>
+        $("#li-{$jqid}").css({
+            "color":"#fff",
+            "background-color":"#151616"
+        });
+        $("#menu2-li{$linkid}").css({
+            "border-right":"1px #6a7074 solid"
+        });
+        $("#menu2-li{$linkid}").find('a').css({
+            "color":"#999797"
+        });
+    </script>
+</block>

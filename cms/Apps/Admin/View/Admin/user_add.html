@@ -1,0 +1,139 @@
+<extend name="Public:base" />
+<block name="title"><title>栏目设置</title></block>
+<block name="top-1">管理员管理</block><block name="top-2">管理员设置</block><block name="top-3">添加管理员</block>
+<block name="content">
+
+    <div class="page-container">
+        <form method="post" class="form form-horizontal" id="form-category-add" autocomplete="off">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr align="center">
+                <td height="40px">用户名</td>
+                <td>
+                    <div class="formControls">
+                        <input type="text" class="input-text radius " value="" placeholder="用户名" autocomplete="off" name="username" id="username">
+                    </div>
+                </td>
+                <td>姓名</td>
+                <td>
+                    <div class="formControls">
+                        <input type="text" class="input-text radius " value="" placeholder="姓名" autocomplete="off" name="nickname" id="nickname">
+                    </div>
+                </td>
+                <tr>
+                <tr align="center">
+                    <td height="40px">输入密码</td>
+                    <td>
+                        <div class="formControls">
+                            <input type="password" class="input-text radius " value="" placeholder="请输入密码" autocomplete="off" name="password" id="password">
+                        </div>
+                    </td>
+                    <td>验证密码</td>
+                    <td>
+                        <div class="formControls">
+                            <input type="password" class="input-text radius " value="" placeholder="请再次输入密码" autocomplete="off" name="pwd" id="pwd">
+                        </div>
+                    </td>
+                <tr>
+                <tr align="center">
+                    <td height="40px">电话</td>
+                    <td>
+                        <div class="formControls">
+                            <input type="text" class="input-text radius " value="" placeholder="电话" autocomplete="off" name="phone" id="phone">
+                        </div>
+                    </td>
+                    <td>所属角色</td>
+                    <td>
+                        <div class="formControls">
+                          <span class="select-box radius">
+                          <select class="select" size="1" name="role_rid">
+                              <option  value="">请选择</option>
+                              <volist name="rolelist" id="vo">
+                              <option value="{$vo.id},{$vo.title}">{$vo.title}</option>
+                              </volist>
+                          </select>
+                        </span>
+                        </div>
+                    </td>
+                <tr>
+                    <td colspan="4" align="center" height="80px" valign="center">
+                        <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                        <input id="reset" type="reset" class="btn btn-primary radius" value="&nbsp;&nbsp;重置&nbsp;&nbsp;">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        $("#form-category-add").validate({
+            rules:{
+                username:{
+                    required:true,
+                    remote:{
+                        url:"__URL__/user_add/type/check",
+                        type:"post"
+                    }
+                },
+                nickname:{
+                    required:true,
+                    remote:{
+                        url:"__URL__/user_add/type/check",
+                        type:"post"
+                    }
+                },
+                password:{
+                    required:true,
+                    minlength:6
+                },
+                pwd:{
+                    required:true,
+                    minlength:6,
+                    equalTo:"#password"
+                },
+                phone: {
+                    required: true,
+                    remote: {
+                        url: "__URL__/user_add/type/check",
+                        type: "post"
+                    }
+                },
+                role_rid:{
+                    required: true
+                }
+            },
+            messages:{
+                username: {
+                    remote: "用户名已经存在"
+                },
+                nickname:{
+                    remote:"姓名已经存在"
+                },
+                phone:{
+                    remote:"电话已经存在"
+                }
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                var postData = $(form).serializeArray();
+                $.ajax({
+                    type:"post",
+                    url:"__URL__/user_add/type/save",
+                    data: postData,//表单数据
+                    success:function(d){
+                        if(d==='1'){
+                            parent.layer.msg('保存成功!<script>setTimeout("window.location.reload();",500);<\/script>', {icon: 6,time:1000});
+                            parent.$('.btn-refresh').click();
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+
+                        }else{
+                            layer.msg(d);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</block>

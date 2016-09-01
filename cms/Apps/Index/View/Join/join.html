@@ -1,0 +1,77 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .menu-2-ul{list-style:none;position:relative;top: 200px;font-size: 16px;}
+        .menu-2-ul li{padding: 10px 0 10px 0;}
+        .menu-2-ul li a:visited {color:#fff;text-decoration:none;}
+        .menu-2-ul li a:link{color: #fff; text-decoration:none;}
+        .titleinfo{position: absolute;top: 18px;left: 320px;}
+        .title-cn{font-size: 18px;color: #b5b5b6;line-height: 28px;font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu }
+        .title-en{font-size: 16px;color: #b5b5b6;font-family: arial, helvetica, sans-serif;}
+        hr{position: absolute;top: 70px;left: 320px;width: 800px;border:1px #595757 solid ;}
+        .index{color: #595757;position: absolute;right: 320px;top: 50px;}
+        .newstitle{color: #fff;position: absolute;left: 320px;top: 130px;font-size: 12px;height:550px;overflow-y: auto; width: 800px;}
+        .c-c{margin-bottom: 15px;}
+        .btn{margin: 0 auto;width: 370px;}
+        .input{background-color: #000;color: #fff;height:35px;font-size: 14px;border: 1px #595757 solid;width: 370px;padding: 2px 0 0 10px;}
+    </style>
+</block>
+<block name="left-2-menu">
+    <ul class="menu-2-ul">
+        <volist name="menu2list" id="vo">
+            <li id="menu2-li{$vo.id}"><a href="__ROOT__/{$vo.link}.html">{$vo.name}</a></li>
+        </volist>
+    </ul>
+</block>
+<block name="right">
+    <span class="titleinfo"><span class="title-cn">在线加盟</span><br><span class="title-en">ONLINE FRANCHISE</span></span><span class="index"><img src="__PUBLIC__/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > 经销加盟 > 在线加盟</span>
+    <hr/>
+    <div class="newstitle">
+        <div class="c-c">
+            <img src="__PUBLIC__/img/index/name.png" style="vertical-align: middle;margin-right: 15px;">
+            <input class="input" placeholder="您的姓名"></div>
+        <div class="c-c">
+            <img src="__PUBLIC__/img/index/jiontll.png" style="vertical-align: middle;margin-right: 15px;">
+            <input class="input" placeholder="您的联系电话"></div>
+        <div class="c-c">
+            <img src="__PUBLIC__/img/index/joinliuyan.png" style="vertical-align: top;margin-right: 15px;">
+            <textarea class="input" placeholder="请留下您要说的话" style="height: 155px;width: 360px;padding: 10px;"></textarea></div>
+        <div class="btn">
+           <img src="__PUBLIC__/img/index/joinbtn.png" style="border: 0;cursor: pointer;">
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script>
+        $("#li-{$jqid}").css({
+            "color":"#fff",
+            "background-color":"#151616"
+        });
+        $("#menu2-li{$menu2list[0][id]}").css({
+            "border-right":"1px #6a7074 solid"
+        });
+        $("#menu2-li{$menu2list[0][id]}").find('a').css({
+            "color":"#999797"
+        });
+        $(function(){
+            if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+                $('[placeholder]').focus(function() {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                        input.removeClass('placeholder');
+                    }
+                }).blur(function() {
+                    var input = $(this);
+                    if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                        input.addClass('placeholder');
+                        input.val(input.attr('placeholder'));
+                    }
+                }).blur();
+            };
+        })
+        function placeholderSupport() {
+            return 'placeholder' in document.createElement('input');
+        }
+    </script>
+</block>

@@ -1,0 +1,30 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .menu-2-ul{list-style:none;position:relative;top: 240px;font-size: 16px;}
+        .menu-2-ul li{padding: 10px 0 10px 0;}
+        .menu-2-ul li a:visited {color:#fff;text-decoration:none;}
+        .menu-2-ul li a:link{color: #fff; text-decoration:none;}
+    </style>
+</block>
+<block name="left-2-menu">
+    <ul class="menu-2-ul">
+        <volist name="menu2list" id="vo">
+            <li id="menu2-li{$vo.id}"><a href="__ROOT__/{$vo.link}.html">{$vo.name}</a></li>
+        </volist>
+    </ul>
+</block>
+<block name="js">
+    <script>
+        $("#li-{$jqid}").css({
+            "color":"#fff",
+            "background-color":"#151616"
+        });
+        $("#menu2-li{$linkid}").css({
+            "border-right":"1px #6a7074 solid"
+        });
+        $("#menu2-li{$linkid}").find('a').css({
+            "color":"#999797"
+        });
+    </script>
+</block>

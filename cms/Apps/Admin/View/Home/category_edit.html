@@ -1,0 +1,90 @@
+<extend name="Public:base" />
+<block name="title"><title>栏目设置</title></block>
+<block name="top-1">首页设置</block><block name="top-2">栏目设置</block><block name="top-3">编辑栏目</block>
+<block name="content">
+
+    <div class="page-container">
+        <form method="post" class="form form-horizontal" id="form-category-eidt">
+            <input type="hidden" name="id"  value="{$list[0].id}">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr align="center">
+                    <td width="80px" height="40px">栏目名称</td>
+                    <td>
+                        <div class="formControls">
+                        <input type="text" class="input-text radius " value="{$list[0].name}" placeholder="栏目名称" autocomplete="off" name="name" id="name">
+                        </div>
+                    </td>
+                    <td width="80px">栏目链接</td>
+                    <td>
+                        <div class="formControls">
+                        <input type="text" class="input-text radius"  value="{$list[0].link}" placeholder="栏目链接"  name="link"  id="link">
+                        </div>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td height="40px">栏目级别</td>
+                    <td>
+                        <span class="select-box radius">
+                          <select class="select" size="1" name="pid">
+                              <option value="0" <if condition="$list[0][pid] eq 0">selected</if>>顶级栏目</option>
+                              <volist name="pidlist" id="vo">
+                                  <option value="{$vo.id}" <if condition="$list[0][pid] eq $vo[id]">selected</if>>|- &nbsp;{$vo.name}</option>
+                              </volist>
+                          </select>
+                        </span>
+                    </td>
+                    <td>栏目排序</td>
+                    <td> <span class="select-box radius">
+                          <select class="select" size="1" name="sort">
+                              <option value="1" <if condition="$list[0][sort] eq 1">selected</if>>1</option>
+                              <for start="2" end="11">
+                                  <option value="{$i}" <if condition="$list[0][sort] eq $i">selected</if>>{$i}</option>
+                              </for>
+                          </select>
+                        </span></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center" height="80px" valign="center"><input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;修改&nbsp;&nbsp;"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+
+        $("#form-category-eidt").validate({
+            rules:{
+                name:{
+                    required:true,
+                    minlength:2,
+                    maxlength:16
+                },
+                link:{
+                    required:true
+                }
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                var postData = $(form).serializeArray();
+                $.ajax({
+                    type:"post",
+                    url:"__URL__/category_edit/type/save",
+                    data: postData,//表单数据
+                    success:function(d){
+                        if(d==='1'){
+                            parent.layer.msg('保存成功!<script>setTimeout("window.location.reload();",500);<\/script>', {icon: 6,time:500});
+                            parent.$('.btn-refresh').click();
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+
+                        }else{
+                            layer.msg(d);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</block>

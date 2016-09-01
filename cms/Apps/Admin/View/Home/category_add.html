@@ -1,0 +1,89 @@
+<extend name="Public:base" />
+<block name="title"><title>栏目设置</title></block>
+<block name="top-1">首页设置</block><block name="top-2">栏目设置</block><block name="top-3">添加栏目</block>
+<block name="content">
+
+    <div class="page-container">
+        <form method="post" class="form form-horizontal" id="form-category-add">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr align="center">
+                    <td width="80px" height="40px">栏目名称</td>
+                    <td>
+                        <div class="formControls">
+                        <input type="text" class="input-text radius " value="" placeholder="栏目名称" autocomplete="off" name="name" id="name">
+                        </div>
+                    </td>
+                    <td width="80px">栏目链接</td>
+                    <td>
+                        <div class="formControls">
+                        <input type="text" class="input-text radius" value="" placeholder="栏目链接"  name="link"  id="link">
+                        </div>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td height="40px">栏目级别</td>
+                    <td>
+                      <span class="select-box radius">
+                          <select class="select" size="1" name="pid">
+                              <option value="0" selected>顶级栏目</option>
+                              <volist name="pidlist" id="vo">
+                                  <option value="{$vo.id}">|- &nbsp;{$vo.name}</option>
+                              </volist>
+                          </select>
+                        </span>
+                    </td>
+                    <td>栏目排序</td>
+                    <td> <span class="select-box radius">
+                          <select class="select" size="1" name="sort">
+                              <option value="1" selected>1</option>
+                              <for start="2" end="11">
+                                  <option value="{$i}">{$i}</option>
+                              </for>
+                          </select>
+                        </span></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center" height="80px" valign="center"><input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+
+        $("#form-category-add").validate({
+            rules:{
+                name:{
+                    required:true,
+                    minlength:2,
+                    maxlength:16
+                },
+                link:{
+                    required:true
+                }
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                var postData = $(form).serializeArray();
+                $.ajax({
+                    type:"post",
+                    url:"__URL__/category_add/type/save",
+                    data: postData,//表单数据
+                    success:function(d){
+                        if(d==='1'){
+                            parent.layer.msg('保存成功!<script>setTimeout("window.location.reload();",1000);<\/script>', {icon: 6,time:1000});
+                            parent.$('.btn-refresh').click();
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+
+                        }else{
+                            layer.msg(d);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</block>
