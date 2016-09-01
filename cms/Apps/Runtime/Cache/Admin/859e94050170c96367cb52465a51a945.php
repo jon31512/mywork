@@ -2,23 +2,23 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="/mprotect/cms/Public/js/jquery-1.10.1.js"></script>
+    <script src="/mywork/cms/Public/js/jquery-1.10.1.js"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/html5.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/respond.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/html5.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/respond.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/PIE_IE678.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/icheck/icheck.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/style.css" />
     <!--[if lt IE 9]>
-    <link href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+    <link href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!--[if IE 6]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>后台管理</title>
@@ -30,7 +30,7 @@
 <body>
 <header class="navbar-wrapper">
     <div class="navbar navbar-fixed-top">
-        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="javascript:;">大浪科技CRM</a>
+        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="javascript:;">大浪科技CMS</a>
             <nav class="nav navbar-nav">
                 <ul class="cl">
                     <li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
@@ -76,8 +76,8 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 新闻管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/mprotect/cms/admin.php/News/news" data-title="新闻资讯" href="javascript:void(0)">新闻资讯</a></li>
-                    <li><a _href="/mprotect/cms/admin.php/News/industry" data-title="行业动态" href="javascript:void(0)">行业动态</a></li>
+                    <li><a _href="/mywork/cms/admin.php/News/news" data-title="新闻资讯" href="javascript:void(0)">新闻资讯</a></li>
+                    <li><a _href="/mywork/cms/admin.php/News/industry" data-title="行业动态" href="javascript:void(0)">行业动态</a></li>
                 </ul>
             </dd>
         </dl>
@@ -85,8 +85,8 @@
             <dt><i class="Hui-iconfont">&#xe636;</i> 内容管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/mprotect/cms/admin.php/About/index" data-title="内容设置" href="javascript:void(0)">内容设置</a></li>
-                    <li><a _href="/mprotect/cms/admin.php/Product/index" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>
+                    <li><a _href="/mywork/cms/admin.php/About/index" data-title="内容设置" href="javascript:void(0)">内容设置</a></li>
+                    <li><a _href="/mywork/cms/admin.php/Product/index" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -94,7 +94,8 @@
             <dt><i class="Hui-iconfont Hui-iconfont-home"></i> 首页设置<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/mprotect/cms/admin.php/Home/category" data-title="栏目设置" href="javascript:;">栏目设置</a></li>
+                    <li><a _href="/mywork/cms/admin.php/Home/keywords" data-title="关键词设置" href="javascript:;">关键词设置</a></li>
+                    <li><a _href="/mywork/cms/admin.php/Home/category" data-title="栏目设置" href="javascript:;">栏目设置</a></li>
                 </ul>
             </dd>
         </dl>
@@ -102,9 +103,9 @@
             <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/mprotect/cms/admin.php/admin/role" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
-                    <li><a _href="/mprotect/cms/admin.php/admin/node" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
-                    <li><a _href="/mprotect/cms/admin.php/admin/user" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+                    <li><a _href="/mywork/cms/admin.php/admin/role" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
+                    <li><a _href="/mywork/cms/admin.php/admin/node" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+                    <li><a _href="/mywork/cms/admin.php/admin/user" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -113,7 +114,7 @@
             <dd>
                 <ul>
                     <li><a _href="system-base.html" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
-                    <li><a _href="/mprotect/cms/admin.php/DataBase" data-title="数据库操作" href="javascript:void(0)">数据库操作</a></li>
+                    <li><a _href="/mywork/cms/admin.php/DataBase" data-title="数据库操作" href="javascript:void(0)">数据库操作</a></li>
                 </ul>
             </dd>
         </dl>
@@ -150,14 +151,14 @@
                     <td style="text-align:left">&nbsp;&nbsp;请使用非IE内核浏览器，在极速模式下运行（非兼容模式）</td>
                 </tr>
             </table>
-            <!--<iframe scrolling="yes" frameborder="0" src="/mprotect/cms/Public/html/403.html"></iframe>-->
+            <!--<iframe scrolling="yes" frameborder="0" src="/mywork/cms/Public/html/403.html"></iframe>-->
         </div>
     </div>
 </section>
-<script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
-<script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
-<script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/mywork/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
 <script type="text/javascript">
     /*资讯-添加*/
     function article_add(title,url){

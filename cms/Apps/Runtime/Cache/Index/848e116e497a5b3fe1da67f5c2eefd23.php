@@ -2,14 +2,17 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="/mprotect/cms/Public/js/jquery-1.10.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/easyui/themes/metro/easyui.css">
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/easyui/demo.css">
+    <title><?php echo ($index_title); ?></title>
+    <meta name="keywords" content="<?php echo ($index_keywords); ?>"/>
+    <meta name="description" content="<?php echo ($index_descript); ?>"/>
+    <meta name="author" content="泸州大浪科技制作"/>
+    <script src="/mywork/cms/Public/js/jquery-1.10.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/easyui/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/easyui/demo.css">
 
-    <script type="text/javascript" src="/mprotect/cms/Public/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <title>泸州润泽天下酒类销售有限责任公司</title>
+    <script type="text/javascript" src="/mywork/cms/Public/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/easyui/locale/easyui-lang-zh_CN.js"></script>
     <style>
         *{margin: 0;padding: 0;}
         body{_width:960px; min-width:960px;font-size: 12px;height: 100%;background-color: #000;}
@@ -55,11 +58,11 @@
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north',border:false" style="height:40px;background:#4D4D4D;padding: 0;">
-    <img class="top-logo" src="/mprotect/cms/Public/img/index/title.png" style="border: 0;" height="26px">
+    <img class="top-logo" src="/mywork/cms/Public/img/index/title.png" style="border: 0;" height="26px">
     <span class="top-right">
-        <img src="/mprotect/cms/Public/img/index/wchat1.png" >
-        <img src="/mprotect/cms/Public/img/index/wbo1.png" >
-        <img src="/mprotect/cms/Public/img/index/qq1.png" >
+        <img src="/mywork/cms/Public/img/index/wchat1.png" >
+        <img src="/mywork/cms/Public/img/index/wbo1.png" >
+        <img src="/mywork/cms/Public/img/index/qq1.png" >
     </span>
 </div>
 
@@ -67,24 +70,26 @@
     <div class="left">
         <div class="menu">
             <ul>
-                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li id="li-<?php echo ($vo["id"]); ?>"><a href="/mprotect/cms/<?php echo ($vo["link"]); ?>.html" class="link"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li id="li-<?php echo ($vo["id"]); ?>"><a href="/mywork/cms/<?php echo ($vo["link"]); ?>.html" class="link"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
             </ul>
         </div>
         <div class="menu-2">
             
     <ul class="menu-2-ul">
-        <?php if(is_array($menu2list)): $i = 0; $__LIST__ = $menu2list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li id="menu2-li<?php echo ($vo["id"]); ?>"><a href="/mprotect/cms/<?php echo ($vo["link"]); ?>.html"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php if(is_array($menu2list)): $i = 0; $__LIST__ = $menu2list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li id="menu2-li<?php echo ($vo["id"]); ?>"><a href="/mywork/cms/<?php echo ($vo["link"]); ?>.html"><?php echo ($vo["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
     </ul>
 
         </div>
 
         <div class="telephone">
-            <img src="/mprotect/cms/Public/img/index/tll.png">
+            <img src="/mywork/cms/Public/img/index/tll.png">
         </div>
 
     </div>
     
-    <span class="titleinfo"><span class="title-cn">在线加盟</span><br><span class="title-en">ONLINE FRANCHISE</span></span><span class="index"><img src="/mprotect/cms/Public/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > 经销加盟 > 在线加盟</span>
+        <span class="titleinfo"><span class="title-cn"><?php echo ($navigation[name]); ?></span><br>
+        <span class="title-en"><?php echo ($navigation[n_en]); ?></span></span><span class="index">
+    <img src="/mywork/cms/Public/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > <?php echo ($navigation[pname]); ?> > <?php echo ($navigation[name]); ?></span>
     <hr/>
     <div class="newstitle">
         <?php echo ($info); ?>
@@ -99,6 +104,17 @@
 <script>
         $('.top').mouseenter(function(){
         });
+        var text=document.title
+        var timerID
+        function newtext() {
+            clearTimeout(timerID)
+            document.title=text.substring(1,text.length)+text.substring(0,1)
+            text=document.title.substring(0,text.length)
+            timerID = setTimeout("newtext()", 600)
+        }
+        if(text.lenth>10){
+            newtext();
+        }
 </script>
 
     <script>

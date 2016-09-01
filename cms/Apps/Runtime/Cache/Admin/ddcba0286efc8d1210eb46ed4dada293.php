@@ -2,33 +2,33 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script type="text/javascript" src="/mprotect/cms/Public/js/jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/js/jquery-1.10.1.js"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/html5.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/respond.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/html5.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/respond.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/PIE_IE678.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/icheck/icheck.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/style.css" />
     <!--[if lt IE 9]>
-    <link href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+    <link href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!--[if IE 6]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/icheck/jquery.icheck.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/icheck/jquery.icheck.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
 
     <title>关于我们</title>
 </head>
@@ -38,7 +38,7 @@
 
     <div class="cl pd-5 bg-1 bk-gray mt-8">
         <span class="l">
-        <a href="javascript:;" onclick="category_add('添加内容','/mprotect/cms/admin.php/About/indexadd/type/show',900,750)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe600;</i> 添加内容</a>
+        <a href="javascript:;" onclick="category_add('添加内容','/mywork/cms/admin.php/About/indexadd/type/show',900,750)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe600;</i> 添加内容</a>
     </span>
        </div>
 <div style="padding: 10px;">
@@ -57,12 +57,12 @@
         <tbody>
         <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="text-c">
                 <td><?php echo ($vo["id"]); ?></td>
-                <td onclick="layer_show('<?php echo ($vo["title"]); ?>','/mprotect/cms/admin.php/About/index/id/<?php echo ($vo["id"]); ?>',900,680)"><?php echo ($vo["title"]); ?></td>
+                <td onclick="layer_show('<?php echo ($vo["title"]); ?>','/mywork/cms/admin.php/About/index/id/<?php echo ($vo["id"]); ?>',900,680)"><?php echo ($vo["title"]); ?></td>
                 <td><?php echo (date('Y-d-m H:i:s',$vo["times"])); ?></td>
                 <td><?php echo ($vo["view"]); ?></td>
                 <td><?php if($vo[istop] == 1): ?>置顶<?php else: ?>正常<?php endif; ?></td>
                 <td><?php if($vo[status] == 1): ?>正常<?php else: ?>关闭<?php endif; ?></td>
-                <td class="f-18"><a title="编辑" href="javascript:;" onclick="category_edit('内容编辑','/mprotect/cms/admin.php/About/indexedit/type/show','<?php echo ($vo["id"]); ?>','900','680')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="category_del(this,'<?php echo ($vo["id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                <td class="f-18"><a title="编辑" href="javascript:;" onclick="category_edit('内容编辑','/mywork/cms/admin.php/About/indexedit/type/show','<?php echo ($vo["id"]); ?>','900','680')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="category_del(this,'<?php echo ($vo["id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>
     </table>
@@ -78,7 +78,7 @@
             var postdata={'id':id,'status':status}
             $.ajax({
                 type: 'post',
-                url: '/mprotect/cms/admin.php/About/category_edit/type/status',
+                url: '/mywork/cms/admin.php/About/category_edit/type/status',
                 data:postdata,
                 success: function (data) {
                     if(data===1){
@@ -103,7 +103,7 @@
                 //此处请求后台程序，下方是成功后的前台处理……
                 $.ajax({
                     type: 'get',
-                    url: '/mprotect/cms/admin.php/About/indexdel/id/'+id,
+                    url: '/mywork/cms/admin.php/About/indexdel/id/'+id,
                     success: function (data) {
                         if(data==="1"){
                             $(obj).parents("tr").remove();

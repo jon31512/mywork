@@ -2,6 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <title><?php echo ($index_title); ?></title>
+    <meta name="keywords" content="<?php echo ($index_keywords); ?>"/>
+    <meta name="description" content="<?php echo ($index_descript); ?>"/>
+    <meta name="author" content="泸州大浪科技制作"/>
     <script src="/mywork/cms/Public/js/jquery-1.10.1.js"></script>
     <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/easyui/themes/metro/easyui.css">
     <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/easyui/themes/icon.css">
@@ -9,7 +13,6 @@
 
     <script type="text/javascript" src="/mywork/cms/Public/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="/mywork/cms/Public/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <title>泸州润泽天下酒类销售有限责任公司</title>
     <style>
         *{margin: 0;padding: 0;}
         body{_width:960px; min-width:960px;font-size: 12px;height: 100%;background-color: #000;}
@@ -123,6 +126,17 @@
 <script>
         $('.top').mouseenter(function(){
         });
+        var text=document.title
+        var timerID
+        function newtext() {
+            clearTimeout(timerID)
+            document.title=text.substring(1,text.length)+text.substring(0,1)
+            text=document.title.substring(0,text.length)
+            timerID = setTimeout("newtext()", 600)
+        }
+        if(text.lenth>10){
+            newtext();
+        }
 </script>
 
     <script type="text/javascript" src="/mywork/cms/Public/js/divscroll.js"></script>

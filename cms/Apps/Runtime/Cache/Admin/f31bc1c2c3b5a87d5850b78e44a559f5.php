@@ -2,33 +2,34 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="/mprotect/cms/Public/js/jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/js/jquery-1.10.1.js"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/html5.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/respond.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/PIE_IE678.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/html5.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/respond.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/PIE_IE678.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/lib/icheck/icheck.css" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/mprotect/cms/Public/Hui/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/lib/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/mywork/cms/Public/Hui/static/h-ui.admin/css/style.css" />
     <!--[if lt IE 9]>
-    <link href="/mprotect/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+    <link href="/mywork/cms/Public/Hui/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!--[if IE 6]>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/icheck/jquery.icheck.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-    <script type="text/javascript" src="/mprotect/cms/Public/Hui/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/layer/2.1/layer.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui/js/H-ui.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/icheck/jquery.icheck.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="/mywork/cms/Public/Hui/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+
     <title>栏目设置</title>
 </head>
 <body>
@@ -38,7 +39,7 @@
     <div class="cl pd-5 bg-1 bk-gray mt-8">
         <span class="l">
         <a href="javascript:;" class="btn btn-danger radius" onclick="data_del()"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-        <a href="javascript:;" onclick="role_add('添加角色','/mprotect/cms/admin.php/Admin/role_add/type/show',800,300)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe604;</i> 添加角色</a>
+        <a href="javascript:;" onclick="role_add('添加角色','/mywork/cms/admin.php/Admin/role_add/type/show',800,300)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe604;</i> 添加角色</a>
     </span>
        </div>
 <div style="padding: 10px;">
@@ -56,7 +57,7 @@
                 <td><input type="checkbox" name="checkbox" value="<?php echo ($vo["id"]); ?>"></td>
                 <td><?php echo ($vo["id"]); ?></td>
                 <td><?php echo ($vo["title"]); ?></td>
-                <td class="f-14"><a title="编辑" href="javascript:;" onclick="role_edit('角色编辑','/mprotect/cms/admin.php/Admin/role_edit/type/show','<?php echo ($vo["id"]); ?>','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="role_del(this,'<?php echo ($vo["id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                <td class="f-14"><a title="编辑" href="javascript:;" onclick="role_edit('角色编辑','/mywork/cms/admin.php/Admin/role_edit/type/show','<?php echo ($vo["id"]); ?>','700','480')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="role_del(this,'<?php echo ($vo["id"]); ?>')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>
     </table>
@@ -89,7 +90,7 @@
                 //此处请求后台程序，下方是成功后的前台处理……
                 $.ajax({
                     type: 'post',
-                    url: '/mprotect/cms/admin.php/Admin/role_del',
+                    url: '/mywork/cms/admin.php/Admin/role_del',
                     data:postdata,
                     success: function (data) {
                         if(data==="1"){
@@ -107,7 +108,7 @@
                 //此处请求后台程序，下方是成功后的前台处理……
                 $.ajax({
                     type: 'get',
-                    url: '/mprotect/cms/admin.php/Admin/role_del/id/'+id,
+                    url: '/mywork/cms/admin.php/Admin/role_del/id/'+id,
                     success: function (data) {
                         if(data==="1"){
                             $(obj).parents("tr").remove();
