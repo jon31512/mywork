@@ -184,6 +184,8 @@ PRIMARY KEY (id)
         }else{
             echo $RS."<br><br>";
         }
+
+
 /** 添加字段调用方法
         $RS=D('DataBase')-> Alter_table('auth_node','INT (2) NOT NULL DEFAULT "0" COMMENT "排序"');
         if($RS===1){
@@ -192,6 +194,12 @@ PRIMARY KEY (id)
             echo $RS."<br><br>";
         }
 */
+        $RS=D('DataBase')-> Alter_table('hometitle','n_en VARCHAR (200) NOT NULL DEFAULT "0" COMMENT "英文名称"');
+        if($RS===1){
+            echo "Alter_table is SUCCESS..."."<br><br>";
+        }else{
+            echo $RS."<br><br>";
+        }
 
         /*修改字段字段名称调用方法
         $RS=D('DataBase')-> Alter_table_change('auth_rule','conditionm conditions VARCHAR(100)');

@@ -21,7 +21,9 @@
     </ul>
 </block>
 <block name="right">
-    <span class="titleinfo"><span class="title-cn">公司简介</span><br><span class="title-en">COMPANY PROFILE</span></span><span class="index"><img src="__PUBLIC__/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > 关于我们 > 公司简介</span>
+    <span class="titleinfo"><span class="title-cn">{$navigation[name]}</span><br>
+        <span class="title-en">{$navigation[n_en]}</span></span><span class="index">
+    <img src="__PUBLIC__/img/index/news02.png" style="margin: 0;vertical-align:top;"> 首页 > {$navigation[pname]} > {$navigation[name]}</span>
     <hr/>
     <div class="newstitle">
         {$content}
@@ -33,10 +35,10 @@
             "color":"#fff",
             "background-color":"#151616"
         });
-        $("#menu2-li{$menu2list[0][id]}").css({
+        $("#menu2-li{$pid}").css({
             "border-right":"1px #6a7074 solid"
         });
-        $("#menu2-li{$menu2list[0][id]}").find('a').css({
+        $("#menu2-li{$pid}").find('a').css({
             "color":"#999797"
         });
     </script>

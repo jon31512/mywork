@@ -14,11 +14,9 @@ class ControllerController extends Controller {
     public function _before_index(){
         header("Content-type: text/html; charset=utf-8");
         $this->checkbrow();
-        echo $this->Mysql();
-
     }
     public function index(){
-        echo "1111";
+
     }
     protected function Mysql(){
 

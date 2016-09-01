@@ -72,4 +72,28 @@ class HomeController extends ControllerController {
             }
         }
     }
+    //    内容导航
+    public function navigation(){
+        $list=M("navigation")->select();
+        $this->assign('list',$list);
+        $this->display();
+    }
+    //    增加栏目
+    public function navigation_add(){
+        if($_GET['type']==='show'){
+            $this->pidlist=M("hometitle")->where("pid>0")->select();
+            $this->pidlist=M("hometitle")->where("pid=0")->select();
+            $this->display();
+        }
+        if($_GET['type']==='save'){
+            $_POST['pt']=M('hometitle')->where('id='.$_POST['pid'])->getField('name');
+            $_POST['v_id']=$_POST['pid'];
+            $rs=M("navigation")->add($_POST);
+            if($rs){
+                echo 1;
+            }else{
+                echo "添加失败";
+            }
+        }
+    }
 }
