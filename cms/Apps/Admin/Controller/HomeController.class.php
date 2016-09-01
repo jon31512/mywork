@@ -72,23 +72,30 @@ class HomeController extends ControllerController {
             }
         }
     }
-    //    内容导航
-    public function navigation(){
-        $list=M("navigation")->select();
+    //    关键词等设置
+    public function keywords(){
+        $list=M("keywords")->select();
+        foreach($list as $key=> $vo){
+            if($vo['type']==='1'){
+                $list[$key]['type']='关键词';
+            }
+            if($vo['type']==='2'){
+                $list[$key]['type']='网站描述';
+            }
+            if($vo['type']==='3'){
+                $list[$key]['type']='网站标题';
+            }
+        }
         $this->assign('list',$list);
         $this->display();
     }
-    //    增加栏目
-    public function navigation_add(){
+    //    增加
+    public function keywords_add(){
         if($_GET['type']==='show'){
-            $this->pidlist=M("hometitle")->where("pid>0")->select();
-            $this->pidlist=M("hometitle")->where("pid=0")->select();
             $this->display();
         }
         if($_GET['type']==='save'){
-            $_POST['pt']=M('hometitle')->where('id='.$_POST['pid'])->getField('name');
-            $_POST['v_id']=$_POST['pid'];
-            $rs=M("navigation")->add($_POST);
+            $rs=M("keywords")->add($_POST);
             if($rs){
                 echo 1;
             }else{
@@ -96,4 +103,29 @@ class HomeController extends ControllerController {
             }
         }
     }
+    //    编辑
+    public function keywords_edit(){
+        if($_GET['type']==='show'){
+            $this->list=M("keywords")->where("id=".$_GET["id"])->select();
+            $this->display();
+        }
+        if($_GET['type']==='save'){
+            $rs=M("keywords")->where("id=".$_POST['id'])->save($_POST);
+            if($rs){
+                echo 1;
+            }else{
+                echo "添加失败";
+            }
+        }
+    }
+    //    删除
+    public function keywords_del(){
+            $rs=M("keywords")->where("id=".$_GET['id'])->delete();
+            if($rs){
+                echo 1;
+            }else{
+                echo "添加失败";
+            }
+    }
+
 }

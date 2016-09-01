@@ -185,6 +185,21 @@ PRIMARY KEY (id)
             echo $RS."<br><br>";
         }
 
+        $table_name="keywords";
+        $sql = "
+CREATE TABLE {$table_name} (
+id INT (8)  NOT NULL AUTO_INCREMENT,
+type INT (2) NOT NULL DEFAULT '0' COMMENT '类型',
+content VARCHAR (500) NOT NULL DEFAULT '0' COMMENT '内容',
+PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='前台关键词';
+            ";
+        $RS=D('DataBase')->check_create($sql);
+        if($RS===1){
+            echo "{$table_name} is create..."."<br><br>";
+        }else{
+            echo $RS."<br><br>";
+        }
 
 /** 添加字段调用方法
         $RS=D('DataBase')-> Alter_table('auth_node','INT (2) NOT NULL DEFAULT "0" COMMENT "排序"');

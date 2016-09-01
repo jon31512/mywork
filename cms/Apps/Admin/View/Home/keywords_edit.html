@@ -1,40 +1,33 @@
 <extend name="Public:base" />
 <block name="title"><title>栏目设置</title></block>
-<block name="top-1">首页设置</block><block name="top-2">内容导航</block><block name="top-3">添加导航</block>
+<block name="top-1">首页设置</block><block name="top-2">内容导航</block><block name="top-3">添加内容</block>
 <block name="content">
 
     <div class="page-container">
         <form method="post" class="form form-horizontal" id="form-category-add">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr align="center">
-                    <td width="80px" height="40px">中文名称</td>
+                    <td width="80px" height="40px">类型</td>
                     <td>
                         <div class="formControls">
-                        <input type="text" class="input-text radius " value="" placeholder="中文名称" autocomplete="off" name="cn" id="cn">
+                            <select class="select" size="1" name="type">
+                                <option value="">请选择</option>
+                                <option value="1" <if condition="$list[0][type] eq '1'">selected</if>>关键词</option>
+                                <option value="2" <if condition="$list[0][type] eq '2'">selected</if>>网站描述</option>
+                                <option value="3" <if condition="$list[0][type] eq '3'">selected</if>>网站标题</option>
+                                </select>
                         </div>
                     </td>
-                    <td width="80px">英文名称</td>
+                </tr><tr align="center">
+                    <td valign="top" width="80px" height="40px">内容</td>
                     <td>
                         <div class="formControls">
-                        <input type="text" class="input-text radius" value="" placeholder="英文名称"  name="en"  id="en">
+                            <textarea name="content" cols="" rows="" class="textarea radius"  placeholder="内容编辑区域...最多500个字">{$list[0][content]}</textarea>
                         </div>
                     </td>
                 </tr>
-                <tr align="center">
-                    <td height="40px">父级标题</td>
-                    <td>
-                      <span class="select-box radius">
-                          <select class="select" size="1" name="pid">
-                              <option value="" selected>请选择</option>
-                              <volist name="pidlist" id="vo">
-                                  <option value="" disabled>——————</option>
-                                  <option value="{$vo.id}">{$vo.name}</option>
-                              </volist>
-                          </select>
-                        </span>
-                    </td>
-                    <td></td>
-                    <td><input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"></td>
+                <tr align="center"><input type="hidden" name="id" value="{$list[0][id]}">
+                    <td colspan="2"><input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"></td>
                 </tr>
             </table>
         </form>
@@ -61,7 +54,7 @@
                 var postData = $(form).serializeArray();
                 $.ajax({
                     type:"post",
-                    url:"__URL__/navigation_add/type/save",
+                    url:"__URL__/keywords_edit/type/save",
                     data: postData,//表单数据
                     success:function(d){
                         if(d==='1'){

@@ -3,9 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-    <meta name="keywords" content="瑞泽天下，泸州酒"/>
+    <title>{$index_title}</title>
+    <meta name="keywords" content="{$index_keywords}"/>
+    <meta name="description" content="{$index_descript}"/>
+    <meta name="author" content="泸州大浪科技制作"/>
     <script src="__PUBLIC__/js/jquery-1.10.1.js"></script>
-    <title>泸州润泽天下酒类销售有限责任公司,欢迎您！</title>
     <style>
         *{margin: 0; padding: 0;font-size: 18px;}
         html,body{height: 100%;}
@@ -76,7 +78,9 @@
         text=document.title.substring(0,text.length)
         timerID = setTimeout("newtext()", 600)
     }
-    newtext();
+    if(text.lenth>10){
+        newtext();
+    }
 </script>
 </body>
 </html>
