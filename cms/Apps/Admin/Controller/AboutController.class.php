@@ -8,7 +8,7 @@ class AboutController extends ControllerController {
             $this->info= M("news")->where('id='.$_GET['id'])->select();
             $this->display('indexdex');
         }else {
-            $newslist = M("news")->where('type=3')->order("istop desc,times desc")->select();
+            $newslist = M("news")->where('type>=3')->order("istop desc,times desc")->select();
             $this->assign('list', $newslist);
             $this->display();
         }
@@ -18,6 +18,36 @@ class AboutController extends ControllerController {
     public function indexadd(){
         if($_GET['type']==='show'){
             $this->display();
+        }
+        if($_GET['type']==='show_v'){
+            $this->display('indexadd_v');
+        }
+        if($_GET['type']==='upload_v'){
+            $item_id=$_GET['upid'];
+            $now=time();
+            $upload = new \Think\Upload();// 实例化上传类
+            $upload->maxSize   =     104857600 ;// 设置附件上传大小100M
+            $upload->saveName = $now."_".rand(0,100); // 采用时间戳命名
+            $upload->exts      =     array("flv", "swf", "mkv", "avi", "rm", "rmvb", "mpeg", "mpg");// 设置附件上传类型
+            $upload->rootPath = './Public/Uploads/file/';
+            $filesavepath = '/Public/Uploads/file/';
+            $upload->savePath ='';// 设置附件上传目录
+            // 上传文件
+            $info   =   $upload->upload();
+            if(!$info) {// 上传错误提示错误信息
+                echo json_encode(array('state' => $upload->getError()));
+            }else{// 上传成功
+                foreach($info as $vo){
+                    $info=$vo;
+                    $data['name']=$vo['name'];
+                    $data['savename']=$vo['savename'];
+                    $data['savepath']=$vo['savepath'];
+                    $data['link']=$filesavepath.$vo['savepath'].$vo['savename'];
+                }
+                $data['fileid']=$item_id;
+                M('uploadfile')->add($data);
+                echo '{"serverPath":"'.$info[ "savepath" ] . '","url":"' .$data['link']. '","fileType":"' . $info[ "type" ] . '","original":"' . $info[ "name" ] . '","state":"SUCCESS"}';
+        }
         }
         if($_GET['type']==='upload'){
             $filetype=$_GET['dir'];
@@ -80,10 +110,11 @@ class AboutController extends ControllerController {
                     unlink($filepath);
                 }
                 M('uploadfile')->where('fileid="'.$fileid.'"')->delete();
+                $this->ajaxReturn(1);
             }
         }
         if($_GET['type']==='save'){
-            $_POST['type']=3;
+            $_POST['type']=isset($_POST['type'])?$_POST['type']:3;
             $_POST['times']=time();
             $rs=M("news")->add($_POST);
             if($rs){
@@ -140,7 +171,7 @@ class AboutController extends ControllerController {
             $flink=M('uploadfile')->where('fileid="'.$fileid.'"')->Field('id,link')->select();
             if($flink){
                 foreach($flink as $key=>$vo){
-                    $filepath="./Public/".$vo['link'];
+                    $filepath=".".$vo['link'];
                     unlink($filepath);
                     M('uploadfile')->where('fileid="'.$fileid.'"')->delete();
                 }

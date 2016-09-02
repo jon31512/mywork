@@ -5,7 +5,8 @@
 
     <div class="cl pd-5 bg-1 bk-gray mt-8">
         <span class="l">
-        <a href="javascript:;" onclick="category_add('添加内容','__URL__/indexadd/type/show',900,750)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe600;</i> 添加内容</a>
+        <a href="javascript:;" onclick="category_add('添加内容','__URL__/indexadd/type/show',900,650)" class="btn btn-primary radius" id="myModal"><i class="Hui-iconfont">&#xe600;</i> 添加内容</a>
+        <a href="javascript:;" onclick="category_add('添加视频内容','__URL__/indexadd/type/show_v',900,650)" class="btn btn-primary radius" id="myModals"><i class="Hui-iconfont">&#xe600;</i> 添加视频内容</a>
     </span>
        </div>
 <div style="padding: 10px;">
@@ -74,7 +75,7 @@
                     type: 'get',
                     url: '__URL__/indexdel/id/'+id,
                     success: function (data) {
-                        if(data==="1"){
+                        if(data===1){
                             $(obj).parents("tr").remove();
                             layer.msg('已删除!',{icon:1,time:1000});
                         }else{

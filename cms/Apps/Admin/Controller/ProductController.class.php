@@ -28,7 +28,6 @@ class ProductController extends ControllerController {
                 $upload->maxSize   =     104857600 ;// 设置附件上传大小100M
             $upload->saveName = $now."_".rand(0,100); // 采用时间戳命名
                 $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-                $upload->savePath  =      './Public/Uploads/'; // 设置附件上传目录
                 $upload->rootPath = './Public/Uploads/product/';
                 $filesavepath='/Public/Uploads/product/';
                 $upload->savePath ='';// 设置附件上传目录
